@@ -105,6 +105,12 @@ def run_trackeval(trackeval_root: Path, run_name: str, benchmark: str, split: st
     """
     cmd = [
         sys.executable,
+        "-c",
+        (
+            "import numpy as np, runpy, sys; "
+            "np.float = float; np.int = int; "
+            "runpy.run_path(sys.argv.pop(1), run_name='__main__')"
+        ),
         str(trackeval_root / "scripts" / "run_mot_challenge.py"),
         "--GT_FOLDER", str(trackeval_root / "data" / "gt" / "mot_challenge"),
         "--TRACKERS_FOLDER", str(trackeval_root / "data" / "trackers" / "mot_challenge"),
