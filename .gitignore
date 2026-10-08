@@ -1,5 +1,13 @@
 lab_data/
-runs/
+runs/*
+!runs/nop_bai/
+runs/nop_bai/*
+!runs/nop_bai/video_[1-5].txt
+!runs/nguoi_1/
+runs/nguoi_1/*
+!runs/nguoi_1/BAN_GIAO.md
+!runs/nguoi_1/video_1_pedestrian_summary.txt
+!runs/nguoi_1/video_1_eval_config.json
 TrackEval/
 *.pt
 __pycache__/
